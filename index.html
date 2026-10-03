@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5fc">
+  <title>Tayyab's AdmitSchool</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="AdmitSchool dashboard">
+        <span class="brand-mark"><span class="brand-mark-inner">A</span></span>
+        <span class="brand-copy"><strong>admit<span>school</span></strong><small>ADMISSIONS PORTAL</small></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard" data-page="dashboard"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+            </svg></span>Dashboard</a>
+        <a class="nav-link" href="#applications" data-page="applications"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <path d="M7 3.75h7l4 4v12.5H7a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Z" />
+              <path d="M14 4v4h4M9 13h6M9 16.5h6" />
+            </svg></span>Applications<span class="nav-count" id="navApplicationCount">0</span></a>
+        <a class="nav-link" href="#registration" data-page="registration"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3.25" />
+              <path d="M3.5 19c.4-3 2.45-4.5 5.5-4.5 2.1 0 3.7.75 4.65 2.25M18 8v7M14.5 11.5h7" />
+            </svg></span>Student registration</a>
+        <a class="nav-link" href="#exams" data-page="exams"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="15" rx="2" />
+              <path d="M8 3.5v3M16 3.5v3M4 9.5h16M8 13h2M14 13h2M8 16.5h2" />
+            </svg></span>Entrance exams</a>
+        <a class="nav-link" href="#merit" data-page="merit"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM8 6H5v2a4 4 0 0 0 4 4M16 6h3v2a4 4 0 0 1-4 4M12 13v4M8.5 20h7M10 17h4" />
+            </svg></span>Merit list</a>
+        <a class="nav-link" href="#fees" data-page="fees"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <rect x="3.5" y="5" width="17" height="14" rx="2" />
+              <path d="M3.5 9h17M7.5 14h3" />
+            </svg></span>Fees & payments</a>
+        <a class="nav-link" href="#reports" data-page="reports"><span class="nav-icon"><svg viewBox="0 0 24 24">
+              <path d="M4 19.5V12M10 19.5V5M16 19.5V9M22 19.5V3" />
+            </svg></span>Reports</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon"><svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M9.7 9a2.4 2.4 0 1 1 4.3 1.45c-.9 1.05-2 1.2-2 2.8M12 16.5h.01" />
+            </svg></span>
+          <strong>Need a hand?</strong>
+          <p>Our admissions team is here to help.</p>
+          <button class="help-link" data-action="support">Contact support <span>↗</span></button>
+        </div>
+        <div class="sidebar-user">
+          <div class="avatar avatar-purple">˙𐃷˙</div>
+          <div class="user-copy"><strong>Admin</strong><span>Administrator</span></div>
+          <button class="icon-button user-menu" id="profileButton" aria-label="Account options"><svg viewBox="0 0 24 24">
+              <circle cx="5" cy="12" r="1" />
+              <circle cx="12" cy="12" r="1" />
+              <circle cx="19" cy="12" r="1" />
+            </svg></button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Open navigation"><svg viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg></button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="breadcrumbCurrent">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <span class="academic-year"><span class="online-dot"></span> 2026–27 admissions</span>
+          <button class="icon-button theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg viewBox="0 0 24 24">
+              <path d="M20 15.5A8.2 8.2 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z" />
+            </svg></button>
+          <button class="notification-button" id="notificationsButton" aria-label="Notifications"><svg viewBox="0 0 24 24">
+              <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+            </svg><span></span></button>
+          <div class="topbar-divider"></div>
+          <div class="top-user">
+            <div class="avatar avatar-purple">˙𐃷˙</div><span>Admin</span><svg class="chevron" viewBox="0 0 24 24">
+              <path d="m7 10 5 5 5-5" />
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-content" id="pageContent" aria-live="polite"></div>
+      <footer class="app-footer"><span>© 2026 AdmitSchool. All rights reserved.</span><span>Made with care by <strong>Tayyaba Shaikh</strong></span></footer>
+    </main>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-root" id="modalRoot"></div>
+</body>
+</html>
